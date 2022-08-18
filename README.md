@@ -15,6 +15,8 @@ To use the password generator:
 3. Choose whether or not to include lowercase letters, uppercase letters, special characters, and numbers. (Must choose at least one)
 4. Done! Your randomized password will print in the textbox above.
 
-![Demonstration of project in use](assets/demos/Screen%20Recording%202022-08-18%20at%206.55.13%20PM.mov)
+
+![Demonstration of project in use]https://user-images.githubusercontent.com/90112060/185509698-bdc61322-2dc2-4906-ae54-043438ef8d91.mov
+
 
 ## Link to Deployed Project
