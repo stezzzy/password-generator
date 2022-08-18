@@ -1,4 +1,4 @@
-// program to get a random item from an array
+// attempt to  get a random item from an array
 
 function getRandomChar(selectedChar) {
   // get random index value
@@ -75,3 +75,28 @@ console.log(result);
 
 //todo: create for loop that calls getRandomChar(userInput) times and adds it to itself
 //todo something like for (result.length = 0; result.length < userInput.length; userInput++;)
+
+//!Idea for the if statements to make them not concat and join the strings no matter what
+//!! function confirmLower() {
+//     confirm("Would you like to include lower case letters in your password?");
+//     if (confirmLower === true) {
+//       //TODO:  Add the lowerCaseArray to the possible outcomes randomness.
+//       let selectedChar = userChoice.push(lowerCaseArray.join());
+//       console.log(userChoice);
+//       confirmUpper();
+//     } else if (!confirmLower) {
+//       confirmUpper();
+//     }
+//   }
+//   confirmLower();
+
+//   function confirmUpper() {
+//     confirm("Would you like to include UPPER case letters in your password?");
+//     if (confirmUpper === true) {
+//       let selectedChar = userChoice.push(upperCaseArray.join());
+//       console.log(userChoice);
+//       confirmSpecial();
+//     } else if (!confirmUpper) {
+//       confirmSpecial;
+//     }
+//? ..... etc

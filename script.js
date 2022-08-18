@@ -121,7 +121,7 @@ let upperCaseArray = [
 ];
 let specialCharArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 let numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-// let selectedChar = "";
+// let selectedChar = [];
 let userChoice = [];
 
 //? Make password between 8-20 characters in a better way?
@@ -129,61 +129,82 @@ let userChoice = [];
 
 // TODO: Make function generatePassword(); receive user inputs upon clicking Generate (click event already defined)
 function generatePassword() {
-  let userInput = prompt(
-    "How long would you like your password to be? (Must Be Between 8-20 Characters)"
+  var pwd = [];
+  let userInput = parseInt(
+    prompt(
+      "How long would you like your password to be? (Must Be Between 8-20 Characters)"
+    )
   );
-  if (userInput >= 8 && userInput <= 20) {
-    console.log("Valid Value");
 
-    function confirmLower() {
-      confirm("Would you like to include lower case letters in your password?");
-    }
-    confirmLower();
-    if (confirmLower) {
-      //TODO:  Add the lowerCaseArray to the possible outcomes randomness.
-      let selectedChar = userChoice.push(...lowerCaseArray);
-      console.log(selectedChar);
-      function confirmUpper() {
-        confirm(
-          "Would you like to include UPPER case letters in your password?"
-        );
-      }
-      if (confirmUpper) {
-        let selectedChar = selectedChar.push(...upperCaseArray);
-        function confirmSpecial() {
-          confirm(
-            "Would you like to include special Characters in your password?"
-          );
-        }
-        if (confirmSpecial) {
-          let selectedChar = selectedChar.push(...specialCharArray);
-          function confirmNumbers() {
-            confirm("Would you like to include numbers in your password");
-          }
-          if (confirmNumbers) {
-            let selectedChar = selectedChar.push(...numbersArray);
-          } else {
-            return;
-          }
-        } else {
-          //TODO: if no special characters make a prompt confirmNumbers and if confirm selectedChar does not include special characters.
-          confirmNumbers();
-        }
-      } else {
-        //TODO: if no uppercase make prompt confirmSpecial and if confirm selectedChar does not include uppercase
-        confirmSpecial();
-      }
-    } else {
-      //TODO: if no lowercase make prompt confirmUpper and if confirm selectedChar does not include lowercase
-      confirmUpper();
-    }
+  if (Number.isNaN(userInput)) {
+    alert("password length is not provided as a number");
+    return null;
+  }
 
-    // getLowerCase(); TODO: Make this function activate the lowerCaseArray.
-  } else {
-    window.alert("Invalid Value");
+  if (userInput < 8 || userInput > 128) {
+    console.log("Invalid Value");
     generatePassword();
   }
+  var lowerConfirm = confirm(
+    "Would you like to include lower case letters in your password?"
+  );
+  var specialConfirm = confirm(
+    "Would you like to include special Characters in your password?"
+  );
+  var upperConfirm = confirm(
+    "Would you like to include UPPER case letters in your password?"
+  );
+  var confirmNumbers = confirm(
+    "Would you like to include numbers in your password"
+  );
+
+  // confirmLower();
+  if (lowerConfirm === true) {
+    //TODO:  Add the lowerCaseArray to the possible outcomes randomness.
+    userChoice = userChoice.concat(lowerCaseArray);
+    console.log(userChoice);
+  }
+  if (upperConfirm === true) {
+    userChoice = userChoice.concat(upperCaseArray);
+    console.log(userChoice);
+  }
+  if (specialConfirm === true) {
+    userChoice = userChoice.concat(specialCharArray);
+    console.log(userChoice);
+  }
+
+  if (confirmNumbers) {
+    userChoice = userChoice.concat(numbersArray);
+    console.log(userChoice);
+  }
+
+  for (var i = 0; i < userInput; i++) {
+    pwd.push(userChoice[Math.floor(Math.random() * userChoice.length)]);
+    console.log(pwd);
+  }
+
+  return pwd.join("");
+  //     } else {
+  //       //TODO: if no special characters call function confirmNumbers and if confirm selectedChar does not include special characters.
+  //       let selectedChar = userChoice.pop();
+  //       confirmNumbers();
+  //     }
+  //   } else {
+  //     //TODO: if no uppercase call function confirmSpecial and if confirm selectedChar does not include uppercase
+  //     let selectedChar = userChoice.pop();
+  //     confirmSpecial();
+  //     userChoice.pop();
+  //   }
+  // } else if (!confirmLower) {
+  //   //TODO: if no lowercase call function confirmUpper and if confirm selectedChar does not include lowercase
+  //   let selectedChar = userChoice.pop();
+  //   confirmUpper();
+  //   userChoice.pop();
+  // }
+  console.log(userChoice);
 }
+
+// getLowerCase(); TODO: Make this function activate the lowerCaseArray.
 
 // Write password to the #password input
 function writePassword() {
