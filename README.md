@@ -21,3 +21,5 @@ https://user-images.githubusercontent.com/90112060/185509698-bdc61322-2dc2-4906-
 
 
 ## Link to Deployed Project
+
+https://stezzzy.github.io/password-generator/
