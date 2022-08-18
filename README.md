@@ -16,7 +16,7 @@ To use the password generator:
 4. Done! Your randomized password will print in the textbox above.
 
 
-![Demonstration of project in use]https://user-images.githubusercontent.com/90112060/185509698-bdc61322-2dc2-4906-ae54-043438ef8d91.mov
+https://user-images.githubusercontent.com/90112060/185509698-bdc61322-2dc2-4906-ae54-043438ef8d91.mov
 
 
 ## Link to Deployed Project
